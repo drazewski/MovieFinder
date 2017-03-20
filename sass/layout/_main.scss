@@ -1,0 +1,226 @@
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: #333;
+
+	h1 {
+		font-size: 40px;
+    	line-height: 50px;
+	    	@media screen and (min-width: 760px){
+		    	line-height: 80px;
+		    }
+		}
+	h2 {
+		font-size: 16px;
+	    letter-spacing: 0.05em;
+	    text-transform: uppercase;
+		@media screen and (min-width: 760px){
+	    	font-size: 24px;
+	    }
+		
+	}
+	.dn {
+		display: none;
+	}
+	.db {
+		display: block;
+		margin-bottom: 30px;
+	    font-size: 14px;
+	    color: white;
+	    text-align: center;
+	    text-shadow: 0 2px #333;
+	}
+}
+
+main {
+	background-color: #8b4513;
+	box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+
+.main-wrapper {
+	padding: 250px 0;
+	-webkit-transition: 0.6s all ease;
+	transition: 0.6s all ease;
+
+	button {
+	    background: none;
+	    font-family: "Roboto", sans-serif;
+	    border: 0;
+	    color: inherit;
+	    line-height: normal;
+	    overflow: visible;
+	    padding: 0;
+	    -webkit-appearance: button;
+	    -webkit-user-select: none; 
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	}
+	input::-moz-focus-inner,
+	button::-moz-focus-inner {
+	    border: 0;
+	    padding: 0;
+	}
+
+	.main-wrapper-intro {
+		text-align: center;
+	    color: white;    
+	    font-weight: 300;
+	    padding-bottom: 20px;
+	    padding: 0 20px 20px;
+
+	    p{
+	    	font-weight: 400;
+	    	line-height: 20px;
+    		text-shadow: 0 2px #333;
+	    }
+	}
+	.input-group {
+		width: 60%;
+	    margin: auto;
+	    height: 30px;
+	    margin-bottom: 10px;
+	    font-size: 30px;
+	    border: 2px solid #aaa;
+	    border-radius: 6px;
+
+	    ::-webkit-input-placeholder {
+		  font-style: italic;
+		}
+		::-moz-placeholder {
+		  font-style: italic;
+		}
+		:-ms-input-placeholder {
+		  font-style: italic;
+		}
+		:-moz-placeholder {
+		  font-style: italic;
+		}
+
+	    input {
+	    	font-family: "Roboto", sans-serif;
+		    font-weight: 300;
+		    letter-spacing: 0.05em;
+	    }
+	}
+	#hints {
+
+		>p {
+			margin-bottom: 30px;
+		    font-size: 14px;
+		    color: white;
+		    text-align: center;
+		    text-shadow: 0 2px #333;
+		}
+
+		.wrapper-hints {
+			padding: 20px; 
+			background: rgba(255, 235, 59, 0.5);
+			margin: 20px 0; 
+			display: -webkit-flex;
+		    display: flex;
+		    -webkit-flex-direction: row;
+		    -ms-flex-direction: row;
+		    flex-direction: row;
+		    -webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		    -webkit-justify-content: flex-start;
+		    -ms-flex-pack: flex-start;
+		    justify-content: flex-start;
+		    -webkit-align-content: stretch;
+		    -ms-flex-line-pack: stretch;
+		    align-content: stretch;
+		    -webkit-align-items: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		    padding-top: 20px;
+		    height: auto;
+		
+			.hints-singleitem {
+				position: relative;
+				display: flex;
+			    display: -ms-flexbox;
+			    display: -webkit-flex;
+			    -webkit-order: 0;
+			    -ms-flex-order: 0;
+			    order: 0;
+			    -ms-flex-item-align: auto;
+			    align-self: stretch;
+			    margin: 0 5px 25px;
+			    text-align: left;
+
+			    p {
+			    	position: absolute;
+				    top: 90%;
+				    width: 100%;
+				    font-size: 10px;
+				    color: black;
+				    text-shadow: none;
+			    }
+
+			    img {
+				    -webkit-filter: none;
+		  			filter: none;
+			    	height: 150px;
+				    -o-object-fit: cover;
+				    object-fit: cover;
+			    }
+			    img.no-photo {
+			    	padding: 20px 0;
+			    	-o-object-fit: none;
+				    object-fit: none;
+			    }
+			}
+
+			a {
+				display:block; 
+				margin-bottom:20px;
+
+				img {
+					width: 100px;
+				}
+			}
+		}
+	}
+
+	.results {
+		margin-top: 40px;
+
+		img {
+			border: 5px solid black;
+		}
+
+		.results-all {
+			padding-top: 40px;
+			width: 80%;
+
+			p.results-item {
+				text-align: center;
+				padding: 5px 0;
+				text-shadow: none;
+				line-height: 1.4em;
+
+				@media screen and (min-width: 760px){
+				text-align: left;
+				}
+
+				span.results-name {
+					text-decoration: underline;
+				}
+
+			}
+		}
+	}
+}
+
+.no-flexbox{
+
+	.wrapper-hints{
+		display: inline-block;
+
+		.hints-singleitem {
+			display: inline-block;
+		}
+	}
+}
+
+

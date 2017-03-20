@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>The Movie Finder - database of all movies</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!--========HEADER=========-->
+	<header>
+		<div class="container">
+			<div class="logo">
+				<a href="http://mccom.pl">
+					<img src="img/mccom.png" alt="MCCOM Logo">
+				</a>
+			</div>
+			<h2 class="title"><a href="#">THE<span class="h-title">MOVIE</span>FINDER</a></h2>
+			<div class="icons">
+				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+			</div>
+			<div class="arrow-down"></div>
+		</div>
+	</header>
+	<!--=========MAIN========-->
+	<main>
+		<div class="main-wrapper">
+			<div class="container">
+				<div class="form" ng-app="ombdClient"> 
+					<div ng-controller="searchController"> 
+						<div class="row">
+							<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12">
+								<div class="main-wrapper-intro">
+									<h1>What Movie Do You Like?</h1>
+									<p>Find thousands of movies from around the world in our The Movie Finder. Just type first letters of the title to see results...<p>
+								</div>
+								<form name="formName" ng-submit="showMovie()">
+									<div class="input-group">
+										<input id="appendedtext" name="appendedtext" class="form-control" type="text" ng-model="movie" ng-keyUp="searchMovies()" placeholder={{placeholder}} onfocus="this.placeholder = ''" />
+										<span class="input-group-addon"><button type="submit">search</button></span>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12">
+								<div id="hints" class={{hintClass}}>
+								<p>Have you thought about one of these movies?</p>
+									<div class="wrapper-hints">
+										<div class="hints-singleitem" ng-if="x.Type != 'game'" ng-repeat="x in hints">
+											<a ng-click="showMovie(x.imdbID)">
+												<img ng-if="x.Poster != 'N/A'" src="{{x.Poster}}" />
+												<img class="no-photo" ng-if="x.Poster == 'N/A'" src="img/movie-1.png" />
+											</a>
+											<p>{{x.Title}} ({{x.Year}})</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							<div class={{resultsClass}}>
+								<div class="row results">
+									{{warning}}
+									<div class="col-lg-6 col-md-6 col-sm-12">
+										<img src="{{img}}" />
+									</div>
+									<div class="col-lg-6 col-md-6 col-sm-12">
+										<div class="results-all">
+											<p class="results-item"><span class="results-name">Title</span>: {{results.Title}}</p>
+											<p class="results-item"><span class="results-name">Year</span>: {{results.Year}}</p>
+											<p class="results-item"><span class="results-name">Runtime</span>: {{results.Runtime}}</p>
+											<p class="results-item"><span class="results-name">Genre</span>: {{results.Genre}}</p>
+											<p class="results-item"><span class="results-name">Director</span>: {{results.Director}}</p>
+											<p class="results-item"><span class="results-name">Writer</span>: {{results.Writer}}</p>
+											<p class="results-item"><span class="results-name">Actors</span>: {{results.Actors}}</p>
+											<p class="results-item"><span class="results-name">Country</span>: {{results.Country}}</p>
+											<p class="results-item"><span class="results-name">Plot</span>: {{results.Plot}}</p>
+											<p class="results-item"><span class="results-name">imdbRating</span>: {{results.imdbRating}}</p>
+											<p class="results-item"><span class="results-name">imdbScores</span>: {{results.imdbScores}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!--========FOOTER========-->
+	<footer>
+		<div class="credits">
+			<p>Designed & developed by: </p><p class="credits-name"><a href="http://drazewski.pl">Łukasz Drążewski</a></p>
+			<a href="https://github.com/drazewski"><i class="fa fa-github" aria-hidden="true"></i></a>
+	</footer>
+
+	<!-- scripts !-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>

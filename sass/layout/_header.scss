@@ -1,0 +1,76 @@
+header {
+	position: fixed;
+    z-index: 100;
+    width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #ffeB3B;
+	font-family: "Roboto", sans-serif;
+
+	.container {
+		position: relative;
+	}
+	
+	h2.title {
+		text-align: right;
+	    color: #222;
+	    text-decoration: none !important;
+	    @media screen and (min-width: 760px){
+	    	text-align: center;
+	    }
+
+	    a {
+	    	color: inherit;
+
+		    span.h-title{
+		    	color: white;
+		    }
+
+		    &:hover {
+		    	text-decoration: none;
+		    	color: inherit;
+		    }
+		}
+	}
+
+	.logo {
+		position: absolute;
+		left: 0;
+		height: 100%;
+
+		img {
+			vertical-align: middle;
+			height: 20px;
+			padding-left: 10px;
+			@media screen and (min-width: 760px){
+		    	height: 30px;
+		    	padding-left: 0;
+		    }
+
+		}
+	}
+
+	.icons {
+		display: none;
+		@media screen and (min-width: 760px){
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 16px;
+			float: right;
+		}
+
+		i {
+			padding: 0 2px;
+			color: black;
+		}
+	}
+	.arrow-down {
+		width: 0;
+	    margin: auto;
+	    border-left: 100px solid transparent;
+	    border-right: 100px solid transparent;
+	    border-top: 30px solid #ffeB3B;
+	}
+}
