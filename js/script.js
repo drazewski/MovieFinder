@@ -31,7 +31,7 @@ client.controller('searchController', function($scope, $http){
             }, 500)
 
         } else {
-            $scope.resultsClass = 'db'
+            $scope.resultsClass = 'dn'
         }
     }
 
@@ -61,7 +61,9 @@ client.controller('searchController', function($scope, $http){
                 }
             });
         } else {
-            $scope.resultsClass = 'db'
+           $scope.placeholder = 'Enter the name of next movie';
+            $scope.resultsClass = 'dn'
+            
         }
     }
 })

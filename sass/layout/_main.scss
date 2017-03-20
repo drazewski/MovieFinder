@@ -140,13 +140,15 @@ main {
 				display: flex;
 			    display: -ms-flexbox;
 			    display: -webkit-flex;
-			    -webkit-order: 0;
-			    -ms-flex-order: 0;
-			    order: 0;
+			    -webkit-order: 1;
+			    -ms-flex-order: 1;
+			    order: 1;
 			    -ms-flex-item-align: auto;
 			    align-self: stretch;
 			    margin: 0 5px 25px;
 			    text-align: left;
+			    -webkit-transition: 0.4s all ease;
+			    transition: 0.4s all ease;
 
 			    p {
 			    	position: absolute;
@@ -169,6 +171,19 @@ main {
 			    	-o-object-fit: none;
 				    object-fit: none;
 			    }
+
+			    &:hover {
+			    	cursor: pointer;
+			    	-webkit-order: 0;
+			    	-ms-flex-order: 0;
+			    	order: 0;
+
+			    	img {
+			    		-webkit-filter: contrast(70%) brightness(85%);
+	  					filter: contrast(70%) brightness(85%);
+			    		object-fit: none;
+			    	}
+			    }
 			}
 
 			a {
@@ -190,8 +205,9 @@ main {
 		}
 
 		.results-all {
-			padding-top: 40px;
-			width: 80%;
+			@media screen and (min-width: 760px){
+				width: 80%;
+			}
 
 			p.results-item {
 				text-align: center;
